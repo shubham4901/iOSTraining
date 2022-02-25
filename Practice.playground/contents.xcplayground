@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' executeOnSourceChanges='true' importAppTypes='true'>
+    <pages>
+        <page name='Untitled Page'/>
+        <page name='Ch2_Excersice2_Variables'/>
+        <page name='Ch2_Excersice3_Operators'/>
+        <page name='Ch2_Excersice4_Strings'/>
+        <page name='Ch2_Excersice1_HelloWorld'/>
+        <page name='Ch2_Excersice5_ControlFlow'/>
+        <page name='Ch2_Exercise6_Arrays'/>
+        <page name='Ch2_Exercise7_Dictonaries'/>
+        <page name='Ch2_Exercise8_Optionals'/>
+        <page name='Ch2_Exercise9_ChallangePrograms'/>
+    </pages>
+</playground>
