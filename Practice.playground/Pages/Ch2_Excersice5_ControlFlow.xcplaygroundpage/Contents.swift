@@ -15,7 +15,7 @@ makeTriangle(num:4)
 
 
 //Chapter 2 - Exercise 5 - D - Given an integer N draw a pyramid of asterisks. The pyramid should have N lines. On the i-th line there should be N-i spaces followed by i*2-1 asterisks.
-makePyramid(num:4)
+makePyramid(num:5)
 
 
 //Chapter 2 - Exercise 5 - E - You are given a number. Print "prime" if the number is a prime and "not prime" otherwise. A number is a prime if it has exactly 2 distinct divisors (1 and itself).
@@ -76,8 +76,7 @@ func makePyramid(num: Int) {
     print("\n\nChapter 2 - Exercise 5 - D - Given an integer \(num) draw a pyramid of asterisks. The pyramid should have \(num) lines. On the i-th line there should be \(num)-i spaces followed by i*2-1 asterisks.\n")
     var k = 0
     for i in 1...num {
-        k=0
-        for j in stride(from: 1, through: num-i, by: 1) {
+        for _ in stride(from: 1, through: num-i, by: 1) {
             
             print(" ",terminator: "")
             
@@ -89,6 +88,7 @@ func makePyramid(num: Int) {
             
         }
         print("")
+        k=0
     }
     
 }
