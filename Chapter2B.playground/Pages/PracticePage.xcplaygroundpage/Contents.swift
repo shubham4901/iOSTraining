@@ -65,6 +65,23 @@ import Foundation
 //Extensions
 //extensions()
 
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+//Protocols
+//protocolExample()
+
+//Delegates
+//delegatesExample()
+
+//Initializer, Deinitializer, Override
+//initDeinitOverride()
+
+//Refrence Counting
+//refrenceCounting()
+
+//Subscripts
+//subscriptsExample()
+
 func set() {
     
     var setCollection1: Set<Int> = [6,2,8,1,7,12,67,23,8]
@@ -511,19 +528,19 @@ func errorToOptional() {
 }
 
 /*func checkType() {
-    
-    let temp: Int = 10
-    if temp is Int {
-        print("Temp is Integer Variable")
-    }
-    
-    let temp2: String = "10"
-    if temp2 is Int {
-        print("Temp2 is integer variable")
-    } else {
-        print("Temp2 is not integer variable")
-    }
-}*/
+ 
+ let temp: Int = 10
+ if temp is Int {
+ print("Temp is Integer Variable")
+ }
+ 
+ let temp2: String = "10"
+ if temp2 is Int {
+ print("Temp2 is integer variable")
+ } else {
+ print("Temp2 is not integer variable")
+ }
+ }*/
 
 func typeCasting() {
     print(10 as Double)
@@ -613,3 +630,250 @@ extension Student: College {
         print("College : \(college)")
     }
 }
+
+
+protocol CameraFunctions {
+    func openCamera()
+    func clickPicture()
+    func shootVideo()
+}
+protocol ApplicationFunctions {
+    func installApplication()
+    func killApplication()
+    func uninstallApplication()
+    func forceStopApplication()
+}
+protocol CallFunctions {
+    
+    func makeCall()
+    func recordCall()
+    func endCall()
+    func getContact()
+}
+protocol MobilePhone : CallFunctions, ApplicationFunctions, CameraFunctions{
+    func switchOn()
+    func switchOff()
+}
+
+class Iphone13ProMax: MobilePhone {
+    func switchOn() {
+        print("Phone Switching On")
+    }
+    
+    func switchOff() {
+        print("Phone Switching Off")
+    }
+    
+    func makeCall() {
+        print("Call intializing")
+    }
+    
+    func recordCall() {
+        print("Recording call")
+    }
+    
+    func endCall() {
+        print("Ending Call")
+    }
+    
+    func getContact() {
+        print("Getting Contact")
+    }
+    
+    func installApplication() {
+        print("Installing Application")
+    }
+    
+    func uninstallApplication() {
+        print("Unistaliing Application")
+    }
+    
+    func forceStopApplication() {
+        print("Force stopping Application")
+    }
+    
+    func openCamera() {
+        print("Opening Camera")
+    }
+    
+    func clickPicture() {
+        print("Clicking the Picture")
+    }
+    
+    func shootVideo() {
+        print("Shooting Video")
+    }
+    func killApplication() {
+        print("Killing Application")
+    }
+}
+
+
+func protocolExample() {
+    
+    let iphone = Iphone13ProMax()
+    
+    iphone.switchOn()
+    iphone.installApplication()
+    iphone.getContact()
+    iphone.makeCall()
+    iphone.recordCall()
+    iphone.endCall()
+    iphone.forceStopApplication()
+    iphone.killApplication()
+    iphone.openCamera()
+    iphone.clickPicture()
+    iphone.shootVideo()
+    iphone.killApplication()
+    iphone.uninstallApplication()
+    iphone.switchOff()
+}
+
+
+
+protocol AdditionResultDelegate : class
+{
+    func didFinishAddingTwoNumbers(result: Int)
+}
+
+class Developer1
+{
+    weak var managerReference: AdditionResultDelegate?
+    
+    func developerWillAddTwoNumber(a: Int, b: Int)
+    {
+        let result = a + b
+        managerReference?.didFinishAddingTwoNumbers(result: result)
+    }
+}
+
+class Manager : AdditionResultDelegate
+{
+    var developer: Developer1?
+    
+    init(_developer: Developer1) {
+        developer = _developer
+        developer?.managerReference = self
+    }
+    
+    func didFinishAddingTwoNumbers(result: Int)
+    {
+        debugPrint("result of addition = \(result)")
+    }
+    
+    func addTwoNumber(x: Int, y: Int)
+    {
+        developer?.developerWillAddTwoNumber(a: x, b: y)
+    }
+}
+
+func delegatesExample() {
+    let objManager = Manager(_developer: Developer1())
+    objManager.addTwoNumber(x: 10, y: 10)
+}
+
+
+class Temp {
+    
+    var tempVar: String
+    var tempVar2: Int
+    
+    init(tempVar: String, tempVar2: Int) {
+        print("Initializer called")
+        self.tempVar = tempVar
+        self.tempVar2 = tempVar2
+    }
+    
+    deinit{
+        print("Deintialized")
+    }
+    
+    func tempMethod() {
+        print("Method of Parent Class Temp")
+    }
+    
+}
+
+class TempChild : Temp {
+    override func tempMethod() {
+        print("Method of Child Class TempChild ")
+    }
+}
+
+
+
+func initDeinitOverride() {
+    
+    var tempChild : TempChild? = TempChild(tempVar: "Hello2", tempVar2: 20)
+    var temp: Temp? = Temp(tempVar: "Hello", tempVar2: 10)
+    
+    
+    tempChild?.tempMethod()
+    temp?.tempMethod()
+    
+    tempChild = nil
+    temp = nil
+    
+}
+
+
+class Person {
+    let name: String
+    var macbook: MacBook?
+    init(name: String, macbook: MacBook?) {
+        self.name = name
+        self.macbook = macbook
+    }
+    deinit {
+        print("\(name) is being deinitialized")
+    }
+}
+class MacBook {
+    let name: String
+    weak var owner: Person?
+    init(name: String, owner: Person?) {
+        self.name = name
+        self.owner = owner
+    }
+    deinit {
+        print("Macbook named \(name) is being deinitialized")
+    }
+}
+
+func refrenceCounting() {
+    
+    var sean: Person? = Person (name: "Sean", macbook: nil)
+    let matilda: MacBook? = MacBook (name: "Matilda", owner: nil)
+    sean?.macbook = matilda
+    matilda?.owner = sean
+    sean = nil
+    print(matilda?.owner ?? "N/A")
+}
+
+
+
+
+struct Classroom {
+    var students = [
+        ["Eric", "Peter", "Quagmire", "Randy"],
+        ["Messi", "Ronaldo", "Ronaldiho", "Xavi"],
+        ["Trey", "Usher", "Nicki", "Alicia"],
+        [ "Hark", "Bill", "Elon", "Jeff"]
+    ]
+    subscript(row: Int, col: Int) -> String {
+        get {
+            return students[row][col]
+        }
+        set {
+            students[row][col] = newValue
+        }
+    }
+}
+
+func subscriptsExample() {
+    var clas = Classroom( )
+    print(clas[1, 0])
+    clas[0, 0] = "Eric Cartman"
+    print(clas[0, 0])
+}
+
