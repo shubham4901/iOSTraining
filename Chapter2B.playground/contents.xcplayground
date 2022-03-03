@@ -3,5 +3,6 @@
     <pages>
         <page name='PracticePage'/>
         <page name='PracticeProject'/>
+        <page name='Ch2(B)_Exercise1_Class'/>
     </pages>
 </playground>
