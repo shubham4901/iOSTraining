@@ -3,7 +3,7 @@
 import Foundation
 
 //exercise5Q1()
-exercise5Q2()
+//exercise5Q2()
 
 enum PasswordExeption : Error {
 case PasswordTooShotExeption(currentLength: Int)

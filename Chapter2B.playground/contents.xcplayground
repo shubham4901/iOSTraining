@@ -7,5 +7,7 @@
         <page name='Ch2(B)_Exercise2_Structure'/>
         <page name='Ch3(B)_Exercise3_Enumerations'/>
         <page name='Ch2(B)_Exercise5_ErrorHandling'/>
+        <page name='Ch2(B)_Exercise6_Extensions'/>
+        <page name='Ch2(B)_Exercise4_Properties_Subscripts_Inheritance'/>
     </pages>
 </playground>

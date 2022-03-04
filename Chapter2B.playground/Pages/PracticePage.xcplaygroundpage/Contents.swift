@@ -731,14 +731,14 @@ func protocolExample() {
 
 
 
-protocol AdditionResultDelegate : class
+protocol AdditionResultDelegate
 {
     func didFinishAddingTwoNumbers(result: Int)
 }
 
 class Developer1
 {
-    weak var managerReference: AdditionResultDelegate?
+    var managerReference: AdditionResultDelegate?
     
     func developerWillAddTwoNumber(a: Int, b: Int)
     {
@@ -758,7 +758,7 @@ class Manager : AdditionResultDelegate
     
     func didFinishAddingTwoNumbers(result: Int)
     {
-        debugPrint("result of addition = \(result)")
+        print("result of addition = \(result)")
     }
     
     func addTwoNumber(x: Int, y: Int)
