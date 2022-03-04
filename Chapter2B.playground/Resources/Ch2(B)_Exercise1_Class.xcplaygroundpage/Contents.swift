@@ -15,13 +15,15 @@ import Foundation
 
 
 class Exercise1Q1 {
+    
     var question = "Create a swift program to demonstrate swift class. Which has two variables inside class body. Access (Set its values and get its value.) these variables by creating one instance of class."
     
     var questionNumber = 1.0
     
 }
 func exercise1Q1() {
-    let obj = Exercise1Q1()
+    
+    var obj = Exercise1Q1()
     print(obj.question)
     print(obj.questionNumber)
     obj.questionNumber = 1.1
@@ -29,6 +31,7 @@ func exercise1Q1() {
 }
 
 class Exercise1Q2 {
+    
     var name: String
     var college: String?
     var department: String?
@@ -37,6 +40,7 @@ class Exercise1Q2 {
         self.name = name
         self.college = college
     }
+    
     init(name: String, department: String?) {
         self.name = name
         self.department = department
@@ -45,21 +49,27 @@ class Exercise1Q2 {
     func getStudent() {
         print("\(name) \n\(college ?? "N/A") \n\(department ?? "N/A")")
     }
+    
 }
+
 func exercise1Q2() {
-    let steve = Exercise1Q2(name: "Steve", college: "Oxford")
-    let mark = Exercise1Q2(name: "Mark", department: "Computer")
+    
+    var steve = Exercise1Q2(name: "Steve", college: "Oxford")
+    var mark = Exercise1Q2(name: "Mark", department: "Computer")
     
     steve.getStudent()
     mark.getStudent()
 }
 
 class Exercise1Q3 {
+    
     var question = "Create a swift program to demonstrate swift class. Which has two variables inside class body. Access (Set its values and get its value.) these variables by creating one instance of class."
     
     var questionNumber = 1.0
+    
 }
 func exercise1Q3() {
+    
     var obj = Exercise1Q3()
     print(obj.question)
     print(obj.questionNumber)
@@ -90,6 +100,7 @@ class Child1 : Exercise1Q5 {
 }
 class Child2: Exercise1Q5 {
     var tempChild2 = 2
+    
 }
 func exercise1Q5() {
     let obj1 = Child1()
@@ -111,6 +122,7 @@ class Exercise1Q6 {
     }
 }
 class Child3 : Exercise1Q6 {
+    
     override func printmessage() {
         print("Method of Child CLass")
     }
@@ -124,6 +136,7 @@ func exercise1Q6() {
 }
 
 class Exercise1Q7 {
+    
     var value: Int
     
     init(value: Int) {
@@ -145,10 +158,12 @@ func exercise1Q7() {
 }
 
 class Vehicles {
+    
     var topSpeed: Int
     var engineCC: Int
     
     init(topSpeed: Int, engineCC: Int) {
+        
         self.topSpeed = topSpeed;
         self.engineCC = engineCC
     }
@@ -158,15 +173,19 @@ class Vehicles {
     }
     
     final func applyAccelerator() {
+        
         print("Speeding Up!!")
     }
     
     final func applyBrakes() {
+        
         print("Speeding down!!")
     }
+    
 }
 
 class Car : Vehicles {
+    
     var carType: String
     var carName: String
     
@@ -181,11 +200,14 @@ class Car : Vehicles {
     }
     
     func openWindows() {
+        
         print("Opening Windows")
     }
+    
 }
 
 class Bike : Vehicles {
+    
     var bikeType: String
     var bikeName: String
     
@@ -206,10 +228,12 @@ class Bike : Vehicles {
     func applyStand(standType: String) {
         print("applying \(standType) stand")
     }
+    
 }
 
 
 func exercise1Q8() {
+    
     let apache = Bike(topSpeed: 157, engineCC: 198, bikeType: "Sports Naked Bike", bikeName: "TVS Apache rtr 200 4V")
     
     print("\(apache.bikeName) is \(apache.engineCC)CC \(apache.bikeType) which touches \(apache.topSpeed)KM/H top Speed")
@@ -231,7 +255,9 @@ func exercise1Q8() {
     harrier.applyBrakes()
 }
 
+
 class Person {
+    
     var name: String
     init(name: String) {
         self.name = name
@@ -240,6 +266,7 @@ class Person {
     func greet() {
         print("Hello \(name)")
     }
+    
 }
 func exercise1Q9() {
     let obj = Person(name: "Joe")
@@ -247,6 +274,7 @@ func exercise1Q9() {
 }
 
 class Example {
+    
     var a: String = ""
 }
 func exercise1Q10() {

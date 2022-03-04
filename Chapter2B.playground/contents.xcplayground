@@ -4,5 +4,8 @@
         <page name='PracticePage'/>
         <page name='PracticeProject'/>
         <page name='Ch2(B)_Exercise1_Class'/>
+        <page name='Ch2(B)_Exercise2_Structure'/>
+        <page name='Ch3(B)_Exercise3_Enumerations'/>
+        <page name='Ch2(B)_Exercise5_ErrorHandling'/>
     </pages>
 </playground>
